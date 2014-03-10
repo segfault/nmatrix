@@ -291,11 +291,11 @@ NM_DEF_STRUCT_POST(NMATRIX);  // };
 typedef struct __NM_GC_LL_NODE {
   VALUE* val;
   size_t n;
-  __NM_GC_LL_NODE* next;
+  struct __NM_GC_LL_NODE* next;
 } nm_gc_ll_node;
 
 typedef struct __NM_GC_HOLDER {
-  __NM_GC_LL_NODE* start;
+  struct __NM_GC_LL_NODE* start;
 } nm_gc_holder;
 
 #define NM_MAX_RANK 15
