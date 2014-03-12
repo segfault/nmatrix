@@ -374,6 +374,7 @@ extern "C" {
 	NM_DECL_ENUM(dtype_t, nm_dtype_guess(VALUE));   // (This is a function)
 	NM_DECL_ENUM(dtype_t, nm_dtype_min(VALUE));
 
+#ifdef NMATRIX_INTERNAL
   // Non-API functions needed by other cpp files.
 	NMATRIX* nm_create(NM_DECL_ENUM(stype_t, stype), STORAGE* storage);
   NMATRIX* nm_cast_with_ctype_args(NMATRIX* self, NM_DECL_ENUM(stype_t, new_stype), NM_DECL_ENUM(dtype_t, new_dtype), void* init_ptr);
@@ -390,6 +391,7 @@ extern "C" {
   void     nm_register_nmatrix(NMATRIX* nmatrix);
   void     nm_unregister_nmatrix(NMATRIX* nmatrix);
   void	   nm_completely_unregister_value(VALUE& val);
+#endif
 #ifdef __cplusplus
 }
 #endif
